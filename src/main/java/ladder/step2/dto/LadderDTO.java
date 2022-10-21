@@ -1,6 +1,9 @@
 package ladder.step2.dto;
 
-import ladder.step2.domain.*;
+import ladder.step2.domain.Direction;
+import ladder.step2.domain.Ladder;
+import ladder.step2.domain.Line;
+import ladder.step2.domain.Point;
 
 import java.util.Collections;
 import java.util.List;

@@ -80,7 +80,7 @@ public class ResultView {
             allResultPrint(ladderGameResultsDTO, ladderResultsDTO);
             return true;
         }
-    
+        
         if (isNotExistTargetPlayer(targetPlayer, ladderGameResultsDTO)) {
             System.out.println(NOT_EXIST_PLAYER_MESSAGE);
             return false;
@@ -98,7 +98,7 @@ public class ResultView {
         final List<String> playerNames = ladderGameResultsDTO.getPlayerNames();
         final List<Integer> ladderPositionResult = ladderGameResultsDTO.getLadderPositionResult();
         final List<LadderResultDTO> ladderResultDTOS = ladderResultsDTO.getLadderResultDTOS();
-    
+        
         final Integer targetPlayerResultPosition = ladderPositionResult.get(targetPlayerOrderNumber(targetPlayer, playerNames));
         System.out.println(ladderResultDTOS.get(targetPlayerResultPosition).getLadderResult());
     }

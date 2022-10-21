@@ -2,7 +2,6 @@ package ladder.step2.domain;
 
 import ladder.step2.domain.partlinestrategy.PartLineCreateStrategy;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.IntStream;
@@ -17,10 +16,14 @@ public class Line {
     public static Line of(final int countOfPlayers, final PartLineCreateStrategy partLineCreateStrategy) {
         LinkedList<Point> line = new LinkedList<>();
         line.add(Point.createFirst(partLineCreateStrategy));
-        IntStream.range(1, countOfPlayers - 1)
-                .forEach(count -> line.add(line.getLast().createNext(partLineCreateStrategy)));
+        drawLadderBody(countOfPlayers, partLineCreateStrategy, line);
         line.add(line.getLast().createLast());
         return new Line(line);
+    }
+    
+    private static void drawLadderBody(final int countOfPlayers, final PartLineCreateStrategy partLineCreateStrategy, final LinkedList<Point> line) {
+        IntStream.range(1, countOfPlayers - 1)
+                .forEach(count -> line.add(line.getLast().createNext(partLineCreateStrategy)));
     }
     
     public int move(final int currentPosition) {

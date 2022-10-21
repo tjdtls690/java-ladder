@@ -1,7 +1,6 @@
 package ladder.step2.domain;
 
 import ladder.step2.domain.partlinestrategy.PartLineCreateStrategy;
-import ladder.step2.domain.partlinestrategy.RandomPartLineCreateStrategy;
 
 public class Point {
     private final Position position;
@@ -32,7 +31,7 @@ public class Point {
         if (direction.isRight()) {
             return position.moveRight();
         }
-    
+        
         return position.pass();
     }
     

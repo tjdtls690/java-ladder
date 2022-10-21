@@ -1,7 +1,6 @@
 package ladder.step2.domain;
 
 import ladder.step2.domain.partlinestrategy.PartLineCreateStrategy;
-import ladder.step2.domain.partlinestrategy.RandomPartLineCreateStrategy;
 import ladder.step2.exception.PartLineOverLappingException;
 
 public class Direction {
@@ -29,7 +28,7 @@ public class Direction {
         if (rightPartLine.isExist()) {
             return new Direction(rightPartLine, new PartLine(false));
         }
-    
+        
         return new Direction(rightPartLine, partLineCreateStrategy.create());
     }
     
